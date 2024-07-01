@@ -1,25 +1,50 @@
-﻿namespace ApiChuckNorris
+﻿using ApiChuckNorris.Models;
+using ApiChuckNorris.Services;
+
+namespace ApiChuckNorris
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private ConsumirApi _consumirApi;
 
-        public MainPage()
-        {
+        public ChuckNorrisChiste _chuckNorris { get; set; }
+
+        private List<ChuckNorrisChiste> _lista = null;
+
+        public string url { get; set; } = null;
+
+        public string value { get; set; }= null;
+
+
+        public MainPage() 
+        { 
             InitializeComponent();
+            _consumirApi = new ConsumirApi();
+            CargarDatos();
+                                                                                                                                
+        
+        
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+
+
+
+        private async void CargarDatos()
         {
-            count++;
+            _chuckNorris = await _consumirApi.GetChisteAsync();
+            
+            
+            
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+
+        
+
+
+        
+
     }
 
 }
