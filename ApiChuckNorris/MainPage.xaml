@@ -5,10 +5,10 @@
 
 
     <StackLayout>
-        <Label Text="{Binding url}" VerticalOptions="Center" Margin="10,0,0,0"/>
-        <Label Text="{Binding value}" VerticalOptions="Center" Margin="10,0,0,0"/>
-
-  >
+        <Label x:Name="url"/>
+        <Label x:Name="value"/>
+        <Button Text="Cambiar Chiste" Clicked="CambiarChiste" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+  
                 
          
 

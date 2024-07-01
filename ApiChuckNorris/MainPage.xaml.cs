@@ -9,11 +9,9 @@ namespace ApiChuckNorris
 
         public ChuckNorrisChiste _chuckNorris { get; set; }
 
-        private List<ChuckNorrisChiste> _lista = null;
+        
 
-        public string url { get; set; } = null;
-
-        public string value { get; set; }= null;
+      
 
 
         public MainPage() 
@@ -34,16 +32,27 @@ namespace ApiChuckNorris
             _chuckNorris = await _consumirApi.GetChisteAsync();
             
             
-            
+            value.Text= _chuckNorris.value;
 
+            url.Text = _chuckNorris.url;
 
         }
 
 
-        
+        private void CambiarChiste(object sender, EventArgs e)
+        {
+            CargarDatos();
+            value.Text = _chuckNorris.value;
+
+            url.Text = _chuckNorris.url;
+        }
 
 
-        
+
+
+
+
+
 
     }
 
