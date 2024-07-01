@@ -5,7 +5,9 @@
 
 
     <StackLayout>
+        <Label Text="URL:" FontSize="Large"/>
         <Label x:Name="url"/>
+        <Label Text="chiste:" FontSize="Large"/>
         <Label x:Name="value"/>
         <Button Text="Cambiar Chiste" Clicked="CambiarChiste" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
   
